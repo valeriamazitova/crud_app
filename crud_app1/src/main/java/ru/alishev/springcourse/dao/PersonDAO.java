@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public class PersonDAO {
-    private static int PEOPLE_COUNT;
+    private static int PEOPLE_COUNT = 5;
     private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USERNAME = "postgres";
     private static final String PASSWORD = "postgres";
@@ -34,7 +34,7 @@ public class PersonDAO {
         List<Person> people = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String SQL = "select * from Person";
+            String SQL = "select * from Person order by id;";
             ResultSet resultSet = statement.executeQuery(SQL);
 
             while (resultSet.next()) {
@@ -81,11 +81,12 @@ public class PersonDAO {
     public void save(Person person) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(
-                    "insert into Person values (1, ?, ?, ?)");
+                    "insert into Person values (?, ?, ?, ?)");
 
-            preparedStatement.setString(1, person.getName());
-            preparedStatement.setInt(2, person.getAge());
-            preparedStatement.setString(3, person.getEmail());
+            preparedStatement.setInt(1, ++PEOPLE_COUNT);
+            preparedStatement.setString(2, person.getName());
+            preparedStatement.setInt(3, person.getAge());
+            preparedStatement.setString(4, person.getEmail());
 
             preparedStatement.executeUpdate();
 
