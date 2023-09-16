@@ -20,19 +20,19 @@ if the server doesn't start:
 
 if the server started succesfully:
 
-- fill the table by running following sql-command in the intellij idea console:
+- fill the table by running following sql-command in the intellij idea console: \
 `create table Person(`\
 `    id int,`\
 `    name varchar,`\
 `    age int,`\
 `    email varchar`\
 `);`\
-and
+and \
 `insert into Person values (1, 'Bob', 28, 'bob@mail.ru'),`\
 `                           (2, 'Tom', 38, 'tom@mail.ru'),`\
 `                           (3, 'Mike', 52, 'mike@yahoo.com'),`\
 `                           (4, 'Kate', 32, 'kate@gmail.com'),`\
-`                           (5, 'Lyla', 31, 'lyla@yandex.ru');`\
+`                           (5, 'Lyla', 31, 'lyla@yandex.ru');`
 
 - open the browser (if it hasn't already)
 - go to `localhost:8080/people` to see the list of all people in the database
