@@ -34,6 +34,7 @@ and \
 `                           (4, 'Kate', 32, 'kate@gmail.com'),`\
 `                           (5, 'Lyla', 31, 'lyla@yandex.ru');`
 
+- restart the server to save changes
 - open the browser (if it hasn't already)
 - go to `localhost:8080/people` to see the list of all people in the database
 - you can click on the specific person to edit person info
