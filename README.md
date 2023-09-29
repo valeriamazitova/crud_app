@@ -32,7 +32,7 @@ and \
 `                           (2, 'Tom', 38, 'tom@mail.ru'),`\
 `                           (3, 'Mike', 52, 'mike@yahoo.com'),`\
 `                           (4, 'Kate', 32, 'kate@gmail.com'),`\
-`                           (5, 'Lyla', 31, 'lyla@yandex.ru');`
+`                           (5, 'Layla', 31, 'layla@yandex.ru');`
 
 - restart the server to save changes
 - open the browser (if it hasn't already)
