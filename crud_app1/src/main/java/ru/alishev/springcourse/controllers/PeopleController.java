@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.alishev.springcourse.models.Person;
+import ru.alishev.springcourse.sevices.ItemService;
 import ru.alishev.springcourse.sevices.PeopleService;
 
 @Controller
@@ -15,10 +16,12 @@ public class PeopleController {
 
 //    private final PersonDAO personDAO;
     private final PeopleService peopleService;
+    private final ItemService itemService;
 
     @Autowired
-    public PeopleController(PeopleService peopleService) {
+    public PeopleController(PeopleService peopleService, ItemService itemService) {
         this.peopleService = peopleService;
+        this.itemService = itemService;
     }
 
 //    @Autowired
@@ -30,6 +33,11 @@ public class PeopleController {
     public String index(Model model) {
         // получим всех людей из DAO и передадим на отображение в представление
         model.addAttribute("people", peopleService.findAll());
+
+        itemService.findByItemName("airpods");
+        itemService.findByOwner(peopleService.findAll().get(0));
+
+        peopleService.test();
         return "people/index";
     }
 
